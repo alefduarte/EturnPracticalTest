@@ -124,7 +124,7 @@ namespace ETurnPracticalTest.Api.Services
             }
         }
 
-        public void AddToMorning(LectureTrack lectureTrack, Track track)
+        public static void AddToMorning(LectureTrack lectureTrack, Track track)
         {
             LectureTrackList.Add(lectureTrack);
             track.LastMorningLecture += new TimeSpan(0, lectureTrack.Lecture.Duration, 0);
@@ -137,7 +137,7 @@ namespace ETurnPracticalTest.Api.Services
         }
 
 
-        public IEnumerable<LectureTrackResponse> FormatResponse(List<LectureTrack> lectureTracks)
+        public static IEnumerable<LectureTrackResponse> FormatResponse(List<LectureTrack> lectureTracks)
         {
             List<LectureTrackResponse> LectureTrackResponseList = new List<LectureTrackResponse>();
             lectureTracks.ForEach(record =>
