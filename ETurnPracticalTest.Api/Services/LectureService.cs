@@ -42,14 +42,16 @@ namespace ETurnPracticalTest.Api.Services
 
             lecture.Title = lecture.Title.Trim();
 
-            var duplicateLecture = LecturesList.Any(record => record.Title == lecture.Title);
+            var duplicateLecture = LecturesList.Any(record => record.Title == lecture.Title && record.Id == lecture.Id);
             if (duplicateLecture)
             {
                 throw new Exception("Lecture has already been stored!");
             }
 
-            var id = LecturesList.Select(record => record.Id).DefaultIfEmpty().Max() + 1;
-            lecture.Id = id;
+            if (lecture.Id <= 0)
+            {
+                lecture.Id = LecturesList.Select(record => record.Id).DefaultIfEmpty().Max() + 1;
+            }
 
             LecturesList.Add(lecture);
             return new ServiceResponse<Lecture>()
