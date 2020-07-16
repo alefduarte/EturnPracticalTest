@@ -37,7 +37,7 @@ namespace ETurnPracticalTest.Api.Services
                 throw new Exception($"{nameof(lecture)} is null!");
             if (string.IsNullOrEmpty(lecture.Title))
                 throw new Exception("Title is null!");
-            if (lecture.Duration <= 0)
+            if (lecture.Duration < 0)
                 throw new Exception("Invalid duraton!");
 
             lecture.Title = lecture.Title.Trim();
