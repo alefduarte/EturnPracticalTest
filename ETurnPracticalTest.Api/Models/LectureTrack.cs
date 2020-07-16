@@ -7,17 +7,17 @@ namespace ETurnPracticalTest.Api.Models
 {
     public class LectureTrack
     {
+        public int Id { get; set; }
         public Lecture Lecture { get; set; }
         public Track Track { get; set; }
         public TimeSpan StartTime { get; set; }
-        public TimeSpan? EndTime { get; set; }
 
-        public LectureTrack(Lecture lecture, Track track, TimeSpan startTime, TimeSpan? endTime)
+        public LectureTrack(int id, Lecture lecture, Track track, TimeSpan startTime)
         {
+            Id = id;
             Lecture = lecture;
             Track = track;
             StartTime = startTime;
-            EndTime = endTime;
         }
     }
 }
