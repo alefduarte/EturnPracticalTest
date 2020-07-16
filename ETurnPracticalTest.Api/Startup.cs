@@ -28,6 +28,7 @@ namespace ETurnPracticalTest.Api
             services.AddControllers();
             services.AddScoped<ILectureService, LectureService>();
             services.AddScoped<ITrackService, TrackService>();
+            services.AddScoped<ILectureTrackService, LectureTrackService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
