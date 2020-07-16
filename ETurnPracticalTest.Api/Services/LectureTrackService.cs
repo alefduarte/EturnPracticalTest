@@ -52,8 +52,8 @@ namespace ETurnPracticalTest.Api.Services
                 new Lecture(19, "UX", 30),
                 new Lecture(20, "Evento de Networking"),
                 new Lecture(21, "Evento de Networking"),
-                new Lecture(22, "Almoço"),
-                new Lecture(23, "Almoço"),
+                new Lecture(22, "Almoço", 30),
+                new Lecture(23, "Almoço", 30),
             };
         }
 
